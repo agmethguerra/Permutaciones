@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Permutaciones</title>
+</head>
+<body>
+    <div class="informacion">
+        <h1>Permutaciones</h1>
+        <p class="texto1">Las permutaciones son un concepto fundamental en matemáticas que se refiere al arreglo de elementos en diferentes órdenes. Son ampliamente utilizadas en diversas áreas, como la combinatoria, la teoría de grupos, la criptografía y la informática.</p>
+    
+        <h2>¿Qué son las permutaciones?</h2>
+        <p class="texto2">En matemáticas, una permutación de un conjunto de elementos es un arreglo de todos los elementos en diferentes órdenes posibles. Por ejemplo, si tenemos los elementos A, B y C, las permutaciones posibles son ABC, ACB, BAC, BCA, CAB y CBA.</p>
+    
+        <h2>Fórmula de Permutaciones</h2>
+        <p>El número de permutaciones de n elementos tomados de r en r se calcula mediante la fórmula:</p>
+        <p>P(n, r) = n! / (n - r)!</p>
+        <p class="texto3">Donde n! (factorial de n) es el producto de todos los enteros positivos menores o iguales a n.</p>
+    
+        <h2>Propiedades de las Permutaciones</h2>
+        <ul class="texto4">
+            <li>El número de permutaciones de n elementos es n!.</li>
+            <li>El número de permutaciones de n elementos tomados de r en r, donde r ≤ n, es nPr = n! / (n - r)!</li>
+            <li>Las permutaciones pueden ser con o sin repetición, dependiendo de si los elementos se pueden repetir o no en la secuencia.</li>
+        </ul>
+    
+        <h2>Aplicaciones de las Permutaciones</h2>
+        <p>Las permutaciones tienen numerosas aplicaciones en diversas áreas:</p>
+        <ul>
+            <li>En combinatoria, las permutaciones se utilizan para contar el número de formas en que se pueden organizar elementos.</li>
+            <li>En la teoría de grupos, las permutaciones se estudian como elementos de grupos de simetría.</li>
+            <li>En criptografía, las permutaciones se utilizan en algoritmos de cifrado para garantizar la seguridad de la información.</li>
+            <li>En informática, las permutaciones se utilizan en algoritmos de búsqueda, ordenación y optimización.</li>
+        </ul>
+        <ul class="texto5">
+            <li>En matemáticas, la fórmula para calcular el número de permutaciones de n objetos tomados de r en r es: <strong>P(n, r) = n! / (n - r)!</strong></li>
+            <li>En Python, puedes usar la librería itertools para generar permutaciones:</li>
+            <pre>
+                <code>
+    import itertools
+    
+    objects = ['A', 'B', 'C']
+    permutations = itertools.permutations(objects)
+    
+    for p in permutations:
+        print(p)
+                </code>
+            </pre>
+        </ul>
+    </div>
+    <div class="perm">
+    <div id="game-container">
+        <h1>Permutador de Clave</h1>
+        <p>Ingresa una palabra y haz clic en el botón para generar una clave permutada.</p>
+    
+            <div id="game-container">
+            <input type="text" id="input-word" placeholder="Ingresa una palabra">
+            <button onclick="permuteWord()">Permutar</button>
+            <p id="permuted-word"></p>
+            </div>
+    
+            <script>
+            function permuteWord() {
+                var inputWord = document.getElementById("input-word").value.trim();
+                if (inputWord === "") {
+                    alert("Por favor ingresa una palabra.");
+                    return;
+                }
+                var shuffledWord = shuffle(inputWord.split('')).join('');
+                document.getElementById("permuted-word").innerHTML = "Clave permutada: " + shuffledWord;
+            }
+    
+            function shuffle(array) {
+                for (var i = array.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                return array;
+            }
+            </script>
+        </div>
+    </div>
+    <footer>
+        <h3>Matemáticas Discretas 2024A</h3>
+        <p>By: <b><i>Agmeth Guerra</i></b></p>
+    </footer>
+    <script>
+        function permuteWord() {
+            var inputWord = document.getElementById("input-word").value.trim();
+            if (inputWord === "") {
+                alert("Por favor ingresa una palabra.");
+                return;
+            }
+            var shuffledWord = shuffle(inputWord.split('')).join('');
+            document.getElementById("permuted-word").innerHTML = "Clave permutada: " + shuffledWord;
+        }
+
+        function shuffle(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+    </script>
+</body>
+</html>
