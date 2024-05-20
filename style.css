@@ -20,7 +20,7 @@ body{
 .texto1{
     margin-bottom: 4rem;
 }
-.texto2, .texto3, .texto4, .texto5{
+.texto2, .texto3, .texto4, .texto5, .texto6, .texto7{
     margin-bottom: 2rem;
 }
 .perm{
@@ -28,8 +28,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 800px;
-    height: 200px;
+    width: 50rem;
+    height: 15rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra */
 }
 #game-container {
@@ -37,10 +37,21 @@ body{
     text-align: center;
 }
 footer{
+    
     width: 100vw;
     margin-top: 5rem;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+@media (max-width: 768px) {
+    code{
+        height: 50px;
+        font-size: smaller;
+    }
+    .perm{
+        width: 20rem;
+        font-size: small;
+    }
 }
